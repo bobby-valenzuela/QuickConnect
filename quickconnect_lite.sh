@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# EZ-SSH
+# QuickConnect
 
 # Author : Bobby Valenzuela
 # Created : 20th June 2023
