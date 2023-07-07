@@ -31,6 +31,10 @@ Usage:
 bash quickconnect.sh -r
 ```
 
+_Note: Connecting via RDP requires xfreerdp and rdesktop to be installed._
+
+<br />
+
 ### Trouble Shooting (WSL)
 
 I've been using this without issue in WSL, butin case you're having issues, it could be to do with your `DISPLAY1 environment variable.
