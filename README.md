@@ -49,3 +49,7 @@ __Helpful Related Links (WSL + GUI)__
 - [Link 1](https://aalonso.dev/blog/how-to-use-gui-apps-in-wsl2-forwarding-x-server-cdj)
 - [Link 2](https://wiki.ubuntu.com/WSL#Running_Graphical_Applications)
 - [Link 3](https://wiki.iihe.ac.be/Use_X11_forwarding_with_WSL)
+
+<br />
+
+There is a "lite" version included, which only has the bits of the script needed to read the ssh config file and connect via ssh (no RDP connections/packages to worry about).
