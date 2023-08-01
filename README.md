@@ -2,16 +2,61 @@
 A CLI-Based program that allows you to quickly connect into remote machines via SSH or RDP.
 
 The program reads your ~/.ssh/config file and list all of the available hosts to connect to, listing them in a sorted list.
-Select a system by pressing the corresponding number.
+Select a system by pressing the corresponding number.  
+
+<br> 
+
+__Installing Optional Pre-requisites__  
+_Only needed for RDP connections and password-based SSH connections_  
+```bash
+# Debian-based distros
+sudo apt-get update
+sudo apt install sshpass -y 
+sudo apt-get install freerdp-x11 -y
+sudo apt-get install rdesktop -y
+```
+
+<br>
+
+### Installation:
+```bash
+git clone https://github.com/bobby-valenzuela/QuickConnect.git
+cd QuickConnect/
+chmod +x quickconnect.sh
+mv quickconnect.sh /usr/local/bin/quickconnect
+````
+
+<br>
+
+### Usage:
+```bash
+quickconnect
+```
+
+<br />
+
+<br>
+
+__Simple Installation:__  
+Use this installation if you just want to download the script and run it from a path you choose.
+```bash
+git clone https://github.com/bobby-valenzuela/QuickConnect.git
+cd QuickConnect/
+chmod +x quickconnect.sh
+```
+
+<br>
 
 Usage:
 ```bash
 bash quickconnect.sh
 ```
 
-<br />
 
-### Connecting with password and no key (not recommended)
+<br>
+
+
+## Connecting with password and no key (not recommended)
 If you're connecting to a machine that's only password-protected, include your password as a comment in your `config` file.  
 ```
 Host {my-server-name}
@@ -24,7 +69,14 @@ If you have sshpass installed it will pass in your password so you won't be both
 
 <br>
 
-### Connecting via RDP
+To install sshpass run:
+```bash
+sudo apt install sshpass -y # Debian-based distros
+```
+
+<br>
+
+## Connecting via RDP
 You can include machines in your ~/.ssh/config file that you intend on connecting to via RDP.  
 Format these entries as follows (replacing the bits in curly braces):
 ```
