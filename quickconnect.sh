@@ -60,6 +60,22 @@ else
         select machine in $(awk '/^\s*Host\s/ { print $2 }' ~/.ssh/config | sort | grep -v RDP )
         do
                 echo -e "\nSelected ${machine}. Connecting...\n"
+        
+                # If uses pass and hass sshpass..
+                pass=$(grep -EA 4 ${machine} ~/.ssh/config | grep -i Pass | sed -E 's/^.*Pass\s?//gi' | xargs)
+                echo "PASS: ->${pass}<-"
+                if [[ sshpas ]] && [[ ! -z "${pass}" ]];then
+                    # key=$(grep -EA 4 ${machine} ~/.ssh/config | grep -i IdentityFile | sed -E 's/^.*Identityfile\s?//gi' | xargs)
+                    user=$(grep -EA 4 ${machine} ~/.ssh/config | grep -i User | sed -E 's/^.*User\s?//gi' | xargs)
+                    host=$(grep -EA 4 ${machine} ~/.ssh/config | grep -i HostName | sed -E 's/^.*HostName\s?//gi' | xargs)
+                    port=$(grep -EA 4 ${machine} ~/.ssh/config | grep -i Port | sed -E 's/^.*Port\s?//gi' | xargs)
+                    port_option="-p ${port}"
+                    echo "user: ->${user}<-"
+                    echo "host: ->${host}<-"
+                    echo "port: ->${port}<-"
+                    sshpass -p${pass} ssh ${port_option} ${user}@${host}
+                fi
+                
                 ssh $machine
                 break
         done
