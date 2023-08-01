@@ -11,6 +11,19 @@ bash quickconnect.sh
 
 <br />
 
+### Connecting with password and no key (not recommended)
+If you're connecting to a machine that's only password-protected, include your password as a comment in your `config` file.  
+```
+Host {my-server-name}
+HostName {myserver.io}
+User {user}
+Port {port}
+# Pass {password}
+```
+If you have sshpass installed it will pass in your password so you won't be bothered with a prompt. :)  
+
+<br>
+
 ### Connecting via RDP
 You can include machines in your ~/.ssh/config file that you intend on connecting to via RDP.  
 Format these entries as follows (replacing the bits in curly braces):
