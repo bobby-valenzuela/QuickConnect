@@ -23,7 +23,7 @@ sudo apt-get install rdesktop -y
 git clone https://github.com/bobby-valenzuela/QuickConnect.git
 cd QuickConnect/
 chmod +x quickconnect.sh
-mv quickconnect.sh /usr/local/bin/quickconnect
+sudo mv quickconnect.sh /usr/local/bin/quickconnect
 ````
 
 <br>
